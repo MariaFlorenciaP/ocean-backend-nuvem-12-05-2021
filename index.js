@@ -3,7 +3,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 (async () => {
 
-const url = 'mongodb+srv://admin:MVhyXlPJWaD2Cfbq@cluster0.7fu0x.mongodb.net/ocean_db?retryWrites=true&w=majority';
+const url = 'mongodb+srv://admin:ESTlorMocuGMiWum@cluster0.ykare.mongodb.net/ocean_db?retryWrites=true&w=majority';
 
 const dbName = 'ocean_db';
 
@@ -78,6 +78,6 @@ app.delete('/mensagens/:id', async (req, res) => {
   res.send('Mensagem removida com sucesso.');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000); //para conectar o heroku porque ele decide a porta que usarmos
 
 })();
